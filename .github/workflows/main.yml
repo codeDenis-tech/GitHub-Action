@@ -24,7 +24,9 @@ jobs:
         env:
           CI: true
       - name: create zip bundle
-        run: zip -r ../${{github.sha}}.zip .
+        run: | 
+           cd function
+           zip -r ../${{github.sha}}.zip .
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
