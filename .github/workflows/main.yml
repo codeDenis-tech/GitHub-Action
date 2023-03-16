@@ -11,6 +11,9 @@ jobs:
         node-version: [16.x]
 
     steps:
+      - run: |
+          mkdir -p path/to/artifact
+          cd path/to/artifact
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -24,14 +27,14 @@ jobs:
         env:
           CI: true
       - name: Archive Build
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./build
+          path: path/to/artifact
 #       - name: create zip bundle
 #         run: | 
            
-#            zip -r ./build/${{github.sha}}.zip .
+#            zip -r  path/to/artifact/${{github.sha}}.zip .
       
 #             dist
 #             !dist/**/*.md
