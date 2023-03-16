@@ -23,15 +23,16 @@ jobs:
           npm test
         env:
           CI: true
+      - name: Archive Build
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: ./build
 #       - name: create zip bundle
 #         run: | 
            
 #            zip -r ./build/${{github.sha}}.zip .
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: zipped-bundle
-          path: ./build
+      
 #             dist
 #             !dist/**/*.md
 #       - name: Archive code coverage results
