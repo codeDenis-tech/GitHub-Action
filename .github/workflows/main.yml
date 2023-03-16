@@ -26,12 +26,12 @@ jobs:
       - name: create zip bundle
         run: | 
            
-           zip -r .build/${{github.sha}}.zip .
+           zip -r ./build/${{github.sha}}.zip .
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
           name: zipped-bundle
-          path: .build/${{github.sha}}.zip
+          path: ./build/${{github.sha}}.zip
 #             dist
 #             !dist/**/*.md
 #       - name: Archive code coverage results
