@@ -1,7 +1,8 @@
-name: Node CI
-
-on: [push]
-
+name: Capstone project  Pipeline
+on:
+  push:
+    branches:
+     - main
 jobs:
   build:
     runs-on: ubuntu-latest
