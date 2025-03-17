@@ -5,13 +5,14 @@ name: 'Third-Party Dependency review'
 on:
   pull_request:
     branches:  
-      - br_capstone
-  push:
-    branches:
-      - br_capstone
+      - main
+  # push:
+  #   branches:
+  #     - main
     
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   dependency-review:
@@ -23,4 +24,4 @@ jobs:
         uses: actions/dependency-review-action@v4
         with:
           comment-summary-in-pr: always
-          #fail-on-severity: critical
+          fail-on-severity: critical
