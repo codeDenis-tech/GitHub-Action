@@ -1,13 +1,14 @@
+# Dependency Review Action
 # This Action will scan dependency manifest files that change as part of a Pull Request,
  
 name: 'Third-Party Dependency review'
 on:
   pull_request:
     branches:  
-      - main
+      - br_capstone
   push:
     branches:
-      - main
+      - br_capstone
     
 permissions:
   contents: read
