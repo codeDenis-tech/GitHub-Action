@@ -1,4 +1,4 @@
-name: Capstone project  Pipeline
+name: Capstone Project  Pipeline
 on:
   push:
     branches:
