@@ -1,22 +1,25 @@
-name: Third-Party Dependency Review
-
+# This Action will scan dependency manifest files that change as part of a Pull Request,
+ 
+name: 'Third-Party Dependency review'
 on:
   pull_request:
-    branches:
-      - br_capstone
+    branches:  
+      - main
   push:
     branches:
-     - br_capstone
+      - main
+    
+permissions:
+  contents: read
 
 jobs:
-   thrid-pary-dependency-review:
+  dependency-review:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: read
     steps:
-      - name: Checkout Repository
+      - name: 'Checkout repository'
         uses: actions/checkout@v4
-
-      - name: Run Dependency Review
-        uses: github/dependency-review-action@v4
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v4
+        with:
+          comment-summary-in-pr: always
+          #fail-on-severity: critical
