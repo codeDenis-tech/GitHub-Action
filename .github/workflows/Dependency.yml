@@ -6,9 +6,9 @@ on:
   pull_request:
     branches:  
       - br_capstone
-  push:
-    branches:
-      - br_capstone
+  # push:
+  #   branches:
+  #     - br_capstone
     
 permissions:
   contents: read
