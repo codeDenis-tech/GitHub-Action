@@ -1,0 +1,22 @@
+name: Third-Party Dependency Review
+
+on:
+  pull_request:
+    branches:
+      - br_capstone
+  push:
+    branches:
+     - br_capstone
+
+jobs:
+   thrid-pary-dependency-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run Dependency Review
+        uses: github/dependency-review-action@v3
